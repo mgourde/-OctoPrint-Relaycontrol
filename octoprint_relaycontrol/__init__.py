@@ -1,6 +1,10 @@
 # coding=utf-8
 from __future__ import absolute_import
 
+__author__ = "Martial Gourde <mgourde@gmail.com>"
+__license__ = "GNU Affero General Public License http://www.gnu.org/licenses/agpl.html"
+__copyright__ = "Copyright (C) 2020 Shawn Bruce - Released under terms of the AGPLv3 License"
+
 ### (Don't forget to remove me)
 # This is a basic skeleton for your plugin's __init__.py. You probably want to adjust the class name of your plugin
 # as well as the plugin mixins it's subclassing from. This is really just a basic skeleton to get you started,
@@ -10,6 +14,14 @@ from __future__ import absolute_import
 # Take a look at the documentation on what other plugin mixins are available.
 
 import octoprint.plugin
+from octoprint.server import user_permission
+import time
+import subprocess
+import threading
+import os
+from flask import make_response, jsonify
+
+
 
 class RelaycontrolPlugin(octoprint.plugin.SettingsPlugin,
                          octoprint.plugin.AssetPlugin,
@@ -60,6 +72,9 @@ class RelaycontrolPlugin(octoprint.plugin.SettingsPlugin,
 # ("OctoPrint-PluginSkeleton"), you may define that here. Same goes for the other metadata derived from setup.py that
 # can be overwritten via __plugin_xyz__ control properties. See the documentation for that.
 __plugin_name__ = "Relaycontrol Plugin"
+__plugin_version__ = "1.0"
+__plugin_author__ = "Martial Gourde"
+__plugin_description__ = ""
 
 # Starting with OctoPrint 1.4.0 OctoPrint will also support to run under Python 3 in addition to the deprecated
 # Python 2. New plugins should make sure to run under both versions for now. Uncomment one of the following
