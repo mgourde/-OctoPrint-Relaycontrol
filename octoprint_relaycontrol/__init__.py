@@ -23,10 +23,19 @@ from flask import make_response, jsonify
 
 
 
-class RelaycontrolPlugin(octoprint.plugin.SettingsPlugin,
-                         octoprint.plugin.AssetPlugin,
-                         octoprint.plugin.TemplatePlugin):
+class RelaycontrolPlugin(octoprint.plugin.StartupPlugin,
+                   		octoprint.plugin.TemplatePlugin,
+                   		octoprint.plugin.AssetPlugin,
+                   		octoprint.plugin.SettingsPlugin,
+                   		octoprint.plugin.SimpleApiPlugin
+				        ):
+    def __init__(self):
+        global relayGPIO
+		from relayGPIO import relayGPIO
 
+	def on_after_startup(self):
+	
+	
 	##~~ SettingsPlugin mixin
 
 	def get_settings_defaults(self):
