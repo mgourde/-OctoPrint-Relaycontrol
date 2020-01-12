@@ -34,6 +34,7 @@ class RelaycontrolPlugin(octoprint.plugin.StartupPlugin,
 		from relayGPIO import relayGPIO
 
 	def on_after_startup(self):
+        self._logger.info("RelayControl: Starting..")    
 	
 	
 	##~~ SettingsPlugin mixin
