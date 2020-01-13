@@ -20,7 +20,7 @@ import subprocess
 import threading
 import os
 from flask import make_response, jsonify
-from relayGPIO import relayGPIO
+#from relayGPIO import relayGPIO
 
 
 
