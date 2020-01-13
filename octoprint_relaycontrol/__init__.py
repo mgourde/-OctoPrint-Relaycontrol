@@ -20,6 +20,7 @@ import subprocess
 import threading
 import os
 from flask import make_response, jsonify
+from relayGPIO import relayGPIO
 
 
 
@@ -31,7 +32,6 @@ class RelaycontrolPlugin(octoprint.plugin.StartupPlugin,
 				        ):
     def __init__(self):
         global relayGPIO
-		from relayGPIO import relayGPIO
 
 	def on_after_startup(self):
         self._logger.info("RelayControl: Starting..")    
